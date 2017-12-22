@@ -80,7 +80,7 @@ namespace InformationNode
 					byte[] b = new byte[100000];
 					mcastSocket.ReceiveFrom(b, ref remoteEP);
 					string str = Encoding.Unicode.GetString(b, 0, b.Length);
-					Console.WriteLine($"Получен Udp запрос");
+					Console.WriteLine($"UDP request received");
 					Message medMsg = JsonConvert.DeserializeObject<Message>(str);
 					Message msg = Message.Create(str, new Client(null, currentNode));
 					b = Encoding.Unicode.GetBytes(JsonConvert.SerializeObject(msg.GetResponse()));
@@ -102,7 +102,7 @@ namespace InformationNode
 			UdpClient client = new UdpClient(localEndPoint);
 			client.Send(msg, msg.Length, targetEndPoint);
 			client.Close();
-			Console.WriteLine($"Отправлен unicast");
+			Console.WriteLine($"Unicast sent");
 		}
 
 		private void MulticastOptionProperties()
