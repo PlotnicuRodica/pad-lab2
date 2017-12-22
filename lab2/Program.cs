@@ -15,22 +15,21 @@ namespace lab2
 		{
 			var messages = new List<Message>()
 			{
-				//new Message()
-				//{
-				//	Author = "I",
-				//	Body = "All",
-				//	Type = "GetInfo",
-				//	ReturnJson = true,
-				//	FilterBy = new Filter() {FilterPerson = new Person(null, 12, null)}
-				//},
+				new Message()
+				{
+					Author = "I",
+					Body = "All",
+					Type = "GetInfo",
+					ReturnJson = true,
+					FilterBy = new Filter() {FilterPerson = new Person(null, 18, null)}
+				},
 				new Message()
 				{
 					Author = "I",
 					Body = "All",
 					Type = "GetInfo",
 					ReturnJson = false,
-					FilterBy = new Filter() {FilterPerson = new Person(null, 18, null)},
-					SortBy = new Sort() {Fields = new List<string>() {"Name"}, IsAsc = true}
+					SortBy = new Sort() {Fields = new List<string>() {"Country"}}
 				}
 			};
 
